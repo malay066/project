@@ -20,8 +20,10 @@ export default function Navbar(props) {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
+                            <div className="form-check form-switch">
+                                <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Default switch checkbox input</label>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -29,10 +31,11 @@ export default function Navbar(props) {
         </div>
     )
 }
-Navbar.propTypes= { title:PropTypes.string.isRequired,
+Navbar.propTypes = {
+    title: PropTypes.string.isRequired,
     about: PropTypes.string.isRequired,
 }
-Navbar.defaultProps={
+Navbar.defaultProps = {
     title: "Set title",
     about: "set about"
 }
