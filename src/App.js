@@ -2,13 +2,13 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Text from './components/Text';
-import About from './components/About';
+// import About from './components/About';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -36,18 +36,18 @@ function App() {
   }
   return (
     <>
-    <Router>
+    {/* <Router> */}
       <Navbar title="TextUtils" about="About" mode={mode} toggle={toggle} />
       <Alert alert={alert} />
-      <Switch>
-        <Route exact path="/about">
+      {/* <Switch> */}
+        {/* <Route exact path="/about">
           <About />
-        </Route>
-        <Route path="/">
+        </Route> */}
+        {/* <Route path="/"> */}
         <Text mode={mode} showAlert={showAlert} />
-        </Route>
-      </Switch>
-      </Router>
+        {/* </Route> */}
+      {/* </Switch> */}
+      {/* </Router> */}
     </>
   );
 }
