@@ -5,10 +5,16 @@ export default function Text(props) {
     const handleUp= ()=>{
         const upCase= text.toUpperCase();
         setText(upCase); 
+        props.showAlert("Converted to uppercase","success");
     }
     const handleLow= ()=>{
         const upCase= text.toLowerCase();
         setText(upCase); 
+        props.showAlert("Converted to lowercase","success");
+    }
+    const handleCl= ()=>{
+        setText('');
+        props.showAlert("Clear Text","success")
     }
     const handleChange= (event)=>{
         setText(event.target.value);
@@ -21,6 +27,7 @@ export default function Text(props) {
             </div>
             <button type="button" className="btn btn-primary mx-1" onClick={handleUp}>convert to uppercase</button>
             <button type="button" className="btn btn-primary mx-1" onClick={handleLow}>convert to lowercase</button>
+            <button type="button" className="btn btn-primary mx-1" onClick={handleCl}>clear</button>
             <div className='container my-2'>
                 <h1>Preview the text</h1>
                 <p>{text? text:"enter your text"}</p>
